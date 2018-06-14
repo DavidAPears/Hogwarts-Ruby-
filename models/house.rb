@@ -10,8 +10,25 @@ class House
   end
 
 
+  def save()
+    sql = "INSERT INTO houses
+    (
+      house_name
+    )
+    VALUES
+    (
+      $1
+    )
+    RETURNING *"
+    values = [@house_name]
+    house = SqlRunner.run(sql, values)
+    @id = house.first()['id'].to_i
+  end
 
-
+  def self.delete_all()
+    sql = "DELETE FROM houses;"
+    SqlRunner.run(sql)
+  end
 
 
 

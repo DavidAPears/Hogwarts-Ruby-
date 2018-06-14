@@ -1,4 +1,5 @@
 DROP TABLE students;
+DROP TABLE houses;
 
 CREATE TABLE students (
   id serial4 primary key,
@@ -6,4 +7,9 @@ CREATE TABLE students (
   last_name varchar(255),
   house varchar(255),
   age int2
+);
+
+CREATE TABLE houses (
+  id serial4 primary key,
+  house_name varchar(255)
 );
