@@ -58,48 +58,15 @@ class Student
   def pretty_name()
     return "#{@first_name} #{@last_name}"
   end
-#   def update()
-#     sql = "UPDATE pizza_orders
-#     SET
-#     (
-#       first_name,
-#       last_name,
-#       topping,
-#       quantity
-#     ) =
-#     (
-#       $1, $2, $3, $4
-#     )
-#     WHERE id = $5"
-#     values = [@first_name, @last_name, @topping, @quantity, @id]
-#     SqlRunner.run( sql, values )
-#   end
-#
-#   def self.delete_all()
-#     sql = "DELETE FROM pizza_orders;"
-#     SqlRunner.run(sql)
-#   end
-#
-#   def delete()
-#     sql = "DELETE FROM pizza_orders
-#     WHERE id = $1"
-#     values = [@id]
-#     SqlRunner.run( sql, values )
-#   end
-#
-#   def self.all()
-#     sql = "SELECT * FROM pizza_orders"
-#     pizzas = SqlRunner.run( sql )
-#     result = pizzas.map { |pizza| PizzaOrder.new( pizza ) }
-#     return result
-#   end
-#
-#   def self.find( id )
-#     sql = "SELECT * FROM pizza_orders WHERE id = $1"
-#     values = [id]
-#     pizza = SqlRunner.run( sql, values )
-#     result = PizzaOrder.new( pizza.first )
-#     return result
-#   end
-#
+
+  def which_house()
+    sql = "SELECT * FROM houses
+    WHERE student_id = $1"
+    values = [@id]
+    house_data = SqlRunner.run(sql, values)
+    return House.map_items(house_data)
+  end
+
+
+
 end
