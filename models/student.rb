@@ -38,6 +38,25 @@ class Student
     SqlRunner.run(sql)
   end
 
+
+  def self.find( id )
+    sql = "SELECT * FROM students WHERE id = $1"
+    values = [id]
+    student = SqlRunner.run( sql, values )
+    result = Student.new( student.first )
+    return result
+  end
+
+  def self.all()
+    sql = "SELECT * FROM students"
+    students = SqlRunner.run( sql )
+    result = students.map { |student| Student.new( student ) }
+    return result
+  end
+
+  def pretty_name()
+    return "#{@first_name} #{@last_name}"
+  end
 #   def update()
 #     sql = "UPDATE pizza_orders
 #     SET

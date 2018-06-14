@@ -1,5 +1,6 @@
 require_relative('../models/student')
 require_relative('../models/house')
+require('pry')
 
 
 Student.delete_all()
@@ -74,10 +75,10 @@ house4 = House.new({
   "house_name" => "slytherin"
 })
 
-
-
-
 house1.save
 house2.save
 house3.save
 house4.save
+
+Binding.pry
+nil

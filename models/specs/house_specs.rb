@@ -2,6 +2,7 @@ require("minitest/autorun")
 require_relative("../house")
 require("minitest/rg")
 
+
 class TestHouse < MiniTest::Test
 
   def setup
@@ -14,6 +15,7 @@ class TestHouse < MiniTest::Test
     result = @house.house_name()
     assert_equal("gryffindor", result)
   end
+
 
 
 end

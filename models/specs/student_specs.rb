@@ -2,6 +2,7 @@ require("minitest/autorun")
 require_relative("../student")
 require("minitest/rg")
 
+
 class TestStudent < MiniTest::Test
 
   def setup
@@ -30,5 +31,6 @@ class TestStudent < MiniTest::Test
     result = @student.age()
     assert_equal(14, result)
   end
+
 
 end
