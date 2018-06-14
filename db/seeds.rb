@@ -1,4 +1,6 @@
- require_relative('../models/student')
+require_relative('../models/student')
+require_relative('../models/house')
+
 
 Student.delete_all()
 
@@ -30,12 +32,6 @@ Student4 = Student.new({
   "age" => 14
 })
 
-Student4 = Student.new({
-  "first_name" => "draco",
-  "last_name" => "malfoy",
-  "house" => "slytherin",
-  "age" => 14
-})
 
 Student5 = Student.new({
   "first_name" => "luna",
@@ -57,3 +53,35 @@ student3.save
 student4.save
 student5.save
 student6.save
+
+
+
+House.delete_all()
+
+House1 = House.new({
+  "house_name" => "gryffindor",
+  
+})
+
+House2 = House.new({
+  "house_name" => "hufflepuff"
+})
+
+House3 = House.new({
+  "house_name" => "ravenclaw"
+})
+
+House4 = House.new({
+  "house_name" => "slytherin"
+})
+
+
+
+
+
+
+
+house1.save
+house2.save
+house3.save
+house4.save

@@ -30,15 +30,5 @@ class TestStudent < MiniTest::Test
     result = @student.age()
     assert_equal(14, result)
   end
-#
-#   def test_pretty_name()
-#     result = @pizza_order.pretty_name()
-#     assert_equal("Walter White", result)
-#   end
-#
-#   def test_total()
-#     result = @pizza_order.total()
-#     assert_equal(50, result)
-#   end
-#
+
 end
