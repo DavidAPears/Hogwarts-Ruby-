@@ -11,10 +11,15 @@ get '/student' do
   erb( :index )
 end
 
-# #NEW
-# get '/pizza-orders/new' do
-#   erb( :new )
-# end
+#NEW
+get '/student/new' do
+  erb( :new )
+end
+# 
+# post '/pizza-orders' do
+#   @order = PizzaOrder.new(params)
+#   @order.save
+#   erb( :create )
 #
 # #SHOW
 # get '/pizza-orders/:id' do
@@ -22,9 +27,4 @@ end
 #   erb( :show )
 # end
 #
-# #CREATE
-# post '/pizza-orders' do
-#   @order = PizzaOrder.new(params)
-#   @order.save
-#   erb( :create )
-end
+#CREATE

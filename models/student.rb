@@ -1,5 +1,5 @@
 require_relative('../db/sql_runner')
-
+require('pry')
 class Student
 
   attr_reader :first_name, :last_name, :house, :age, :id
@@ -53,6 +53,7 @@ class Student
     result = students.map { |student| Student.new( student ) }
     return result
   end
+  Binding.pry
 
   def pretty_name()
     return "#{@first_name} #{@last_name}"
