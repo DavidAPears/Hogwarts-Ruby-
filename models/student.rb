@@ -53,7 +53,7 @@ class Student
     result = students.map { |student| Student.new( student ) }
     return result
   end
-  Binding.pry
+
 
   def pretty_name()
     return "#{@first_name} #{@last_name}"

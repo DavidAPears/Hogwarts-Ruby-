@@ -6,20 +6,26 @@ require_relative( './models/house.rb' )
 also_reload( './models/*' )
 
 #INDEX
-get '/student' do
+get '/students' do
   @students = Student.all()
   erb( :index )
 end
 
 #NEW
-get '/student/new' do
+get '/students/new' do
   erb( :new )
 end
-# 
-# post '/pizza-orders' do
-#   @order = PizzaOrder.new(params)
-#   @order.save
-#   erb( :create )
+#
+post '/students' do
+  @student = Student.new(params)
+  @student.save
+  erb( :create )
+end
+
+get '/houses' do
+  @houses = House.all()
+  erb( :index_house )
+end
 #
 # #SHOW
 # get '/pizza-orders/:id' do
